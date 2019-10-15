@@ -1,0 +1,157 @@
+#mapid {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+}
+
+.mui-textfield>input {
+    font-size: 12px !important;
+    height: 28px !important;
+}
+
+.areas {
+    max-height: 220px;
+    overflow: scroll;
+}
+
+.mui-table {
+    border: scroll;
+    border-collapse: collapse;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+th {
+    cursor: pointer;
+}
+
+th,
+td,
+tr {
+    font-size: 10px;
+    width: 80px;
+    text-align: center !important;
+    padding: 5px !important;
+    max-height: 20px !important;
+    box-sizing: border-box;
+}
+
+#scrollArea {
+    width: 430px;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 170px !important;
+}
+
+.submit {
+    font-size: 12px;
+}
+
+#location {
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.details {
+    margin-bottom: 5px;
+}
+
+.mui-btn {
+    font-size: 10px !important;
+}
+
+.inline {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 30px;
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.right {
+    margin: 0;
+    float: right;
+}
+
+#dec-title {
+    display: block;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+#chart-15,
+#chart-19 {
+    float: right;
+    height: 40px;
+    background: grey;
+    width: 400px;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.dec-bar {
+    height: 40px;
+    background-color: green;
+    width: 10%;
+}
+
+#info-right {
+    overflow: scroll;
+    height: calc(100% - 40px);
+    width: 450px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    z-index: 500;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+}
+
+#year {
+    display: block;
+    text-align: center;
+}
+
+#perc {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.mui-form {
+    font-size: 12px;
+}
+
+.mui-textfield {
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+
+#choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    top: 20px;
+}
+
+.mui-dropdown {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    left: 0;
+    right: 0;
+    z-index: 500;
+}

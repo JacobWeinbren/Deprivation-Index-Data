@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+
+<head>
+    <link rel="stylesheet" href="static/css/leaflet.css">
+    <link rel="stylesheet" href="static/css/mui.css" />
+    <link rel="stylesheet" href="static/css/clusterize.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/leaflet.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/chroma.js"></script>
+    <script src="static/js/glify.js"></script>
+    <script src="static/js/mui.js"></script>
+    <script src="static/js/turf.js"></script>
+    <script src="static/js/popper.js"></script>
+    <script src="static/js/tippy.js"></script>
+    <script src="static/js/clusterize.js"></script>
+</head>
+
+<body>
+    <div id='mapid'></div>
+    <div id='info-right'>
+        <b id='year'>2019</b>
+        <span id='location'>England</span>
+        <div id='choices'>
+            <button class="mui-btn mui-btn--accent 2015">2015</button>
+            <button class="mui-btn mui-btn--primary dif">Difference</button>
+            <button class="mui-btn mui-btn--accent 2019">2019</button>
+        </div>
+        <div class="mui-dropdown">
+            <button class="mui-btn mui-btn--primary drop-text" data-mui-toggle="dropdown">
+                Index of Multiple Deprivation
+                <span class="mui-caret"></span>
+            </button>
+            <ul class="mui-dropdown__menu">
+                <li><a class='option' id='dep' href="#">Index of Multiple Deprivation</a></li>
+                <li><a class='option' id='inc' href="#">Income Deprivation</a></li>
+                <li><a class='option' id='emp' href="#">Employment Deprivation</a></li>
+                <li><a class='option' id='edu' href="#">Education, Skills and Training Deprivation</a></li>
+                <li><a class='option' id='hea' href="#">Health and Disability Deprivation</a></li>
+                <li><a class='option' id='cri' href="#">Crime Deprivation</a></li>
+                <li><a class='option' id='bar' href="#">Barriers to Housing and Services Deprivation</a></li>
+                <li><a class='option' id='liv' href="#">Living Environment Deprivation</a></li>
+                <li><a class='option' id='chi' href="#">Sub: Income Deprivation Affecting Children</a></li>
+                <li><a class='option' id='old' href="#">Sub: Income Deprivation Affecting Older People</a></li>
+                <li><a class='option' id='you' href="#">Sub: Children and Young People Skills</a></li>
+                <li><a class='option' id='adu' href="#">Sub: Adult Skills</a></li>
+                <li><a class='option' id='geo' href="#">Sub: Geographical Barriers (services access)</a></li>
+                <li><a class='option' id='bar' href="#">Sub: Wider Barriers (cost of living, housing)</a></li>
+                <li><a class='option' id='ind' href="#">Sub: Indoors Environment Deprivation</a></li>
+                <li><a class='option' id='out' href="#">Sub: Outdoors Environment Deprivation</a></li>
+            </ul>
+        </div>
+        <p class='details'>Areas can be accessed by clicking them.<a href="https://mapit.mysociety.org/"> MySociety</a> has more details on what small areas refer to.<br>This is a local area within the decile of <b id='dec'>5</b> out of 10, 1 being the most deprived. The area ranks <b id='rank'>16,422</b> out of 32,844, 1 being the most deprived.</p><br>
+        <p class='details'>Entering a postcode below will relocate you to the local area, this is all performed on the front-end</p>
+        <form id='postcode' class="mui-form">
+            <div class="mui-textfield">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" name="postcode" placeholder="Postcode">
+            </div>
+            <button type="submit" class="submit mui-btn mui-btn--raised">Submit</button>
+            <button class="reset mui-btn mui-btn--raised">Reset</button>
+        </form>
+        <p class='details'>This chart shows the breakdown of deciles for a particular authority, containing many local areas.</p>
+        <b id='dec-title'>Deciles of LSOA in Deprivation: England</b>
+        <p class='inline'>2015</p>
+        <div id='chart-15'>
+            <div class='dec-bar 1'></div>
+            <div class='dec-bar 2'></div>
+            <div class='dec-bar 3'></div>
+            <div class='dec-bar 4'></div>
+            <div class='dec-bar 5'></div>
+            <div class='dec-bar 6'></div>
+            <div class='dec-bar 7'></div>
+            <div class='dec-bar 8'></div>
+            <div class='dec-bar 9'></div>
+            <div class='dec-bar 10'></div>
+        </div><br><br>
+        <p class='inline'>2019</p>
+        <div id='chart-19'>
+            <div class='dec-bar 1'></div>
+            <div class='dec-bar 2'></div>
+            <div class='dec-bar 3'></div>
+            <div class='dec-bar 4'></div>
+            <div class='dec-bar 5'></div>
+            <div class='dec-bar 6'></div>
+            <div class='dec-bar 7'></div>
+            <div class='dec-bar 8'></div>
+            <div class='dec-bar 9'></div>
+            <div class='dec-bar 10'></div>
+        </div><br>
+        <p id='perc'>Percentage (%) of Authority</p>
+        <p>The table below shows all the local areas in the particular authority.</p>
+        <div class="clusterize">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Local Area</th>
+                        <th id='r-15'>Rank 2015</th>
+                        <th id='r-19'>Rank 2019 <span class="mui-caret"></span></th>
+                        <th id='r-ch'>Change</th>
+                    </tr>
+                </thead>
+            </table>
+            <div id="scrollArea" class="clusterize-scroll">
+                <table>
+                    <tbody id="contentArea" class="clusterize-content">
+                        <tr class="clusterize-no-data">
+                            <td>Loading data…</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/main.js"></script>
+</body>
