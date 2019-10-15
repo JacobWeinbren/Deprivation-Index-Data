@@ -272,7 +272,7 @@ function draw(geojson) {
 $.getJSON('static/data/postcodes.json', function(json) {
     postcodes = json
     $(".submit").click(function(event) {
-        $(this).prop("disabled", true);
+        $(this).prop("disabled", false);
         event.preventDefault();
         postcode = $(this).find('input[name="postcode"]').val();
         local = postcodes[postcode]
@@ -335,7 +335,7 @@ $.getJSON('static/more_flat_simple.json', function(geojson) {
         });
 
         $('.reset').click(function() {
-            $(this).prop("disabled", true);
+            $(this).prop("disabled", false);
             event.preventDefault();
             year = 2019
             cat = 'dep'
