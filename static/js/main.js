@@ -271,7 +271,7 @@ function draw(geojson) {
 
 $.getJSON('static/data/postcodes.json', function(json) {
     postcodes = json
-    $("#postcode").submit(function(event) {
+    $(".submit").click(function(event) {
         $(this).prop("disabled", true);
         event.preventDefault();
         postcode = $(this).find('input[name="postcode"]').val();
