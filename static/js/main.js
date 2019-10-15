@@ -272,11 +272,11 @@ function draw(geojson) {
 $.getJSON('static/data/postcodes.json', function(json) {
     postcodes = json
     $("#postcode").submit(function(event) {
+        $(this).prop("disabled", true);
+        event.preventDefault();
         postcode = $(this).find('input[name="postcode"]').val();
         local = postcodes[postcode]
         find(local)
-
-        event.preventDefault();
     });
 });
 
@@ -335,6 +335,8 @@ $.getJSON('static/more_flat_simple.json', function(geojson) {
         });
 
         $('.reset').click(function() {
+            $(this).prop("disabled", true);
+            event.preventDefault();
             year = 2019
             cat = 'dep'
             auth = 'England'
