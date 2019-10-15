@@ -91,7 +91,7 @@ td:nth-child(1) {
     float: right;
     height: 40px;
     background: grey;
-    width: 400px;
+    width: 320px;
     display: flex;
     margin-bottom: 5px;
 }
@@ -105,7 +105,7 @@ td:nth-child(1) {
 #info-right {
     overflow: scroll;
     height: calc(100% - 40px);
-    width: 440px;
+    width: 360px;
     font-size: 12px;
     position: absolute;
     bottom: 20px;
