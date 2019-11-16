@@ -269,8 +269,10 @@ function draw(geojson) {
     }
 }
 
-$.getJSON('static/data/postcodes.json', function(json) {
-    postcodes = json
+$(document).ready(function() {
+    $.getJSON('static/data/postcodes.json', function(json) {
+        postcodes = json
+    });
     $(".submit").click(function(event) {
         $(this).prop("disabled", false);
         event.preventDefault();
@@ -279,6 +281,7 @@ $.getJSON('static/data/postcodes.json', function(json) {
         find(local)
     });
 });
+
 
 $.getJSON('static/more_flat_simple.json', function(geojson) {
     $.getJSON('static/data/data.json', function(json) {
