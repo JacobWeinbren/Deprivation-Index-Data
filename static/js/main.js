@@ -275,14 +275,12 @@ $(document).ready(function() {
     });
 
     function postcodes_load() {
-        $(".submit").click(function(event) {
-            $(this).prop("disabled", false);
-            event.preventDefault();
-            console.log('processing')
-            postcode = $(document).find('input[name="postcode"]').val();
-            local = postcodes[postcode]
-            find(local)
-        });
+        $(this).prop("disabled", false);
+        event.preventDefault();
+        console.log('processing')
+        postcode = $(document).find('input[name="postcode"]').val();
+        local = postcodes[postcode]
+        find(local)
     }
 });
 
