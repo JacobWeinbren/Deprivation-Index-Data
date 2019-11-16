@@ -269,19 +269,16 @@ function draw(geojson) {
     }
 }
 
-$(document).ready(function() {
-    $.getJSON('static/data/postcodes.json', function(json) {
-        postcodes = json
-    });
+$.getJSON('static/data/postcodes.json', function(json) {
+    postcodes = json
     $(".submit").click(function(event) {
         $(this).prop("disabled", false);
         event.preventDefault();
-        postcode = $(this).find('input[name="postcode"]').val();
+        postcode = $(document).find('input[name="postcode"]').val();
         local = postcodes[postcode]
         find(local)
     });
 });
-
 
 $.getJSON('static/more_flat_simple.json', function(geojson) {
     $.getJSON('static/data/data.json', function(json) {
