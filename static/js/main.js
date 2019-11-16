@@ -272,15 +272,14 @@ function draw(geojson) {
 $(document).ready(function() {
     $.getJSON('static/data/postcodes.json', function(json) {
         postcodes = json
-    });
-
-    $(".submit").click(function(event) {
-        $(this).prop("disabled", false);
-        event.preventDefault();
-        console.log('processing...');
-        postcode = $(document).find('input[name="postcode"]').val();
-        local = postcodes[postcode]
-        find(local)
+        $(".submit").click(function(event) {
+            $(this).prop("disabled", false);
+            event.preventDefault();
+            console.log('processing...');
+            postcode = $(document).find('input[name="postcode"]').val();
+            local = postcodes[postcode]
+            find(local)
+        });
     });
 });
 
