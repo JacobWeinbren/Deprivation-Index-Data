@@ -1,11 +1,20 @@
 var map = L.map('mapid').setView([51.505, -0.09], 13);
 
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18,
+    accessToken: 'pk.eyJ1IjoiamFjb2J3ZWluYnJlbiIsImEiOiJjanY0YW5iZ28wZ3RuNDRuejhza3g5OGV3In0.pF6j188jtsk35p4plequDA',
+    id: 'mapbox.streets',
+}).addTo(map);
+
+/*
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiamFjb2J3ZWluYnJlbiIsImEiOiJjanY0YW5iZ28wZ3RuNDRuejhza3g5OGV3In0.pF6j188jtsk35p4plequDA'
-}).addTo(map);
+}).addTo(map);*/
 
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
